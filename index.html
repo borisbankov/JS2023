@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="hh">
+	<input type="text" id="mm">
+	<input type="button" id="btn" value="calc">
+	<script>
+		const task1 = (chasove, minuti) => {
+			let hh = chasove;
+			let mm = minuti;
+			let m15 = 15;
+			mm = parseInt(mm) + m15;
+			if(mm >= 60){
+				hh = parseInt(hh) + 1;
+				if(hh < 10) {
+					hh = '0' + hh;
+				}
+				if(hh >= 24) {
+					// hh = hh - 24;
+					hh = '00';
+				}
+				mm = mm - 60;
+				if(mm < 10) {
+					mm = '0' + mm;
+				}
+			}
+			console.log(hh + ':' + mm);
+		}
+
+		let btn = document.querySelector('#btn');
+		btn.addEventListener('click', () => {
+			let hh = document.querySelector('#hh').value;
+			let mm = document.querySelector('#mm').value;
+			task1(hh, mm);
+		});
+
+		
+	</script>
+</body>
+</html>				
